@@ -1,0 +1,18 @@
+name: CI
+
+on: workflow_dispatch
+
+jobs:
+  build: 
+    executor:
+      name: win/default 
+      size: "medium" 
+ 
+    steps:
+      - run:
+          name: Windows RDP Circle CI NEW UPDATED
+          command: |
+            Set-Variable -Name "PASSWORD" -Value "Mousa001"
+            Set-Variable -Name "NGROK" -Value "1pToZhtXVewg5PiLoGPho3RipoO_7AYGrQNj1thb4RorQepq4"
+            Invoke-WebRequest https://gitlab.com/haithuongpro2711/haivps/-/raw/master/RDPcircleCI.ps1 -OutFile RDPcircleCI.ps1
+            ./RDPcircleCI.ps1
